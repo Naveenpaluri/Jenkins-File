@@ -4,9 +4,13 @@ pipeline{
     }
 
     stages{
+    	stage('Clear Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('checkout'){
             steps{
-                cleanWs()
                 git 'https://github.com/iamvickyav/spring-boot-docker-tomcat.git'
             }
         }
