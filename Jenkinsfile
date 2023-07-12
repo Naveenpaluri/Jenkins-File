@@ -67,8 +67,8 @@ pipeline{
         stage('Deploy in Prod_Env'){
             steps{
                 sshagent(['d4657350-8de9-4863-9e98-ee60dcd79e8f']) {
-                sh 'ssh -o StrictHostKeyChecking=no ec2-user@13.234.186.17  sudo docker rm -f mywebapp'
-                sh 'ssh ec2-user@13.234.186.17 sudo docker run -d -p 8080:8080 --name mywebapp npaluri2/simplewebapp:${BUILD_TAG}'
+                sh 'ssh -o StrictHostKeyChecking=no ec2-user@3.110.30.118  sudo docker rm -f mywebapp'
+                sh 'ssh ec2-user@3.110.30.118 sudo docker run -d -p 8080:8080 --name mywebapp npaluri2/simplewebapp:${BUILD_TAG}'
 }
                
             }
